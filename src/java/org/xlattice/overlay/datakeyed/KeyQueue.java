@@ -1,10 +1,10 @@
 /* KeyQueue.java */
 package org.xlattice.overlay.datakeyed;
 
+import java.util.Stack;
 import org.xlattice.NodeID;
 import org.xlattice.overlay.CallBack;
 import org.xlattice.overlay.GetCallBack;
-import org.xlattice.util.ArrayStack;
 import org.xlattice.util.NonBlockingLog;
 import org.xlattice.util.StringLib;
 
@@ -22,7 +22,7 @@ public class KeyQueue implements GetCallBack {
     protected final static NonBlockingLog debugLog
                         = NonBlockingLog.getInstance("debug.log");
 
-    private final ArrayStack keyQ;
+    private final Stack keyQ;
     /** necessary for updating MemCache */
     private final IMemCache memCache;
     private final NodeID   myID;     
@@ -52,7 +52,7 @@ public class KeyQueue implements GetCallBack {
                 + StringLib.byteArrayToHex(id.value()));
         memCache = mCache;
         myID     = id;
-        keyQ     = new ArrayStack();
+        keyQ     = new Stack();
         keyQ.push (cb);
     }
     // LOGGING //////////////////////////////////////////////////////
@@ -107,7 +107,7 @@ public class KeyQueue implements GetCallBack {
         synchronized (keyQ) {
             int count = keyQ.size();
             for (int i = 0; i < count; i++) {
-                GetCallBack cb = (GetCallBack) keyQ.peek(i);
+                GetCallBack cb = (GetCallBack) keyQ.get(i);
                 cb.finishedGet(status, myData);
             }
             keyQ.clear();
