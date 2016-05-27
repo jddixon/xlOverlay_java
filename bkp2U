@@ -4,9 +4,13 @@ if [ ! -z "${DEV_BASE// }" ]
 then
   cd $DEV_BASE/java/xlOverlay_java
   
-  rm -rf xlattice/overlays/store/* 
+  blListGen \
+    -d ../xlOverlay_java \
+    -1L  \
+    -u $DVCZ_UDIR \
+    -X .ssh \
+    $@
   
-  pySloc -L java  -X target -v $@
 else
   echo "DEV_BASE is not defined"
 fi

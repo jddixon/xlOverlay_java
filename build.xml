@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="test" name="overlay" basedir=".">
+<project default="test" name="xlOverlay_java" basedir=".">
   <property name="name"           value="overlay"/>
-  <property name="version"        value="0.2.5"/>
-  <property name="versionDate"    value="2015-12-18"/>
-  <!-- manual addition -->
+  <property name="version"        value="0.2.6"/>
+  <property name="versionDate"    value="2016-05-27"/>
   <property name="project_name"    value="xlattice"/>
   <!-- ======================================================= -->
   <!-- S O U R C E   P R O P E R T I E S                       -->
   <!-- ======================================================= -->
   <!-- this is an XLattice subproject, so root_dir is one up   -->
-  <property name="root_dir"       value=".."/>
+  <property name="root_dir"       value="../xlattice_java"/>
   <property name="src_dir"        value="src/java"/>
   <property name="test_src_dir"   value="src/test"/>
   <property name="jml_dir"        value="jml"/>
@@ -19,7 +18,7 @@
   <!-- ======================================================= -->
   <property name="build_dir" value="target"/>
   <property name="classes_dir"      value="${build_dir}/classes"/>
-  <property name="lib_dir"          value="../lib"/>
+  <property name="lib_dir"          value="${root_dir}/lib"/>
   <property name="test_classes_dir" value="${build_dir}/test-classes"/>
   <property name="test_report_dir"  value="${build_dir}/test-reports"/>
   <property name="javadoc_dir"
@@ -55,8 +54,8 @@
       </src>
       <classpath>
         <fileset dir="${lib_dir}">
-          <include name="xlattice/util-0.3.10.jar"/>
-          <include name="xlattice/crypto-0.2.0.jar"/>
+          <include name="xlattice/util-0.3.16.jar"/>
+          <include name="xlattice/crypto-0.2.6.jar"/>
         </fileset>
       </classpath>
     </javac>
@@ -76,7 +75,7 @@
       <classpath>
         <fileset dir="${lib_dir}">
           <include name="junit/junit*.jar"/>
-          <include name="xlattice/util-0.3.10.jar"/>
+          <include name="xlattice/util-0.3.16.jar"/>
           <include name="xlattice/crypto-0.2.0.jar"/>
           <include name="xlattice/transport-0.2.1.jar"/>
         </fileset>
@@ -98,7 +97,7 @@
       <classpath>
         <fileset dir="${lib_dir}">
           <include name="junit/junit*.jar"/>
-          <include name="xlattice/util-0.3.10.jar"/>
+          <include name="xlattice/util-0.3.16.jar"/>
           <include name="xlattice/crypto-0.2.0.jar"/>
           <include name="xlattice/transport-0.2.1.jar"/>
         </fileset>
@@ -157,7 +156,7 @@
         <pathelement location="${build_dir}/${dist_name}.jar"/>
         <fileset dir="${lib_dir}">
           <include name="junit/junit*.jar"/>
-          <include name="xlattice/util-0.3.10.jar"/>
+          <include name="xlattice/util-0.3.16.jar"/>
           <include name="xlattice/crypto-0.2.0.jar"/>
           <include name="xlattice/transport-0.2.1.jar"/>
         </fileset>
@@ -169,6 +168,7 @@
   <!-- ======================================================= -->
   <target name="dist"   description="o Create a full distribution"
                                                 depends="javadoc">
+    <mkdir  dir="${xdoc_dir}"/>
     <mkdir  dir="${zip_dir}"/>
     <delete dir="${dist_dir}"/>
     <mkdir  dir="${dist_dir}/${component}"/>
@@ -230,4 +230,5 @@
     <delete dir="${dist_dir}"/>
   </target>
 </project>
+
 
