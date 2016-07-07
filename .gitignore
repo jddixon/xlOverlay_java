@@ -4,8 +4,6 @@
 *ZZZ
 *~
 .committed
-.dvcz
-.dvczignore*
 .merkle
 .posted
 .sharedev
@@ -15,11 +13,6 @@
 CVS
 MANIFEST
 __pycache__
-bkp2U
 build
-countem
-installit
 junk*
-styleit
-test.all
 tmp
