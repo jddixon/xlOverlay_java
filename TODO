@@ -1,4 +1,9 @@
-pa:~jdd/dev/java/xlattice/overlay/TODO
+~/dev/java/xlattice/overlay/TODO
+
+2016-07-07
+    * running .test.all repopulates xlattice/overlays/store,
+        and this is followed by ./bkp2U - so bkp2U should clear
+        the clr directories
 
 2012-07-10
     * ArrayStack is deprecated; drop ASAP from overlay
