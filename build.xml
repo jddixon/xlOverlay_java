@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="test" name="xlOverlay_java" basedir=".">
   <property name="name"           value="overlay"/>
-  <property name="version"        value="0.2.6"/>
-  <property name="versionDate"    value="2016-05-27"/>
-  <property name="project_name"    value="xlattice"/>
+  <property name="version"        value="0.2.7"/>
+  <property name="versionDate"    value="2016-07-07"/>
+  <property name="project_name"   value="xlattice"/>
   <!-- ======================================================= -->
   <!-- S O U R C E   P R O P E R T I E S                       -->
   <!-- ======================================================= -->
@@ -230,5 +230,6 @@
     <delete dir="${dist_dir}"/>
   </target>
 </project>
+
 
 
