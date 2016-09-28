@@ -1,5 +1,7 @@
 # xlOverlay/.dvcz/projCfg.local
 
+txt:std:LICENSE-XLATTICE.md
+
 dir:clr:xlattice/overlays/store
 
 
